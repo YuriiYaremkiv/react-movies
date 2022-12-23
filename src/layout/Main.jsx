@@ -13,18 +13,26 @@ export class Main extends React.Component {
   searchMovies = (str, type = "all") => {
     this.setState({ loading: true });
     fetch(
-      `http://www.omdbapi.com/?apikey=34e3dba2&s=${str}${
+      `https://www.omdbapi.com/?apikey=34e3dba2&s=${str}${
         type === "all" ? "" : `&type=${type}`
       }`
     )
       .then((response) => response.json())
-      .then((data) => this.setState({ movies: data.Search, loading: false }));
+      .then((data) => this.setState({ movies: data.Search, loading: false }))
+      .catch((error) => {
+        console.log(error);
+        this.setState({ loading: false });
+      });
   };
 
   componentDidMount() {
-    fetch("http://www.omdbapi.com/?apikey=34e3dba2&s=matrix")
+    fetch("https://www.omdbapi.com/?apikey=34e3dba2&s=matrix")
       .then((response) => response.json())
-      .then((data) => this.setState({ movies: data.Search, loading: false }));
+      .then((data) => this.setState({ movies: data.Search, loading: false }))
+      .catch((error) => {
+        console.log(error);
+        this.setState({ loading: false });
+      });
   }
 
   render() {
