@@ -26,7 +26,7 @@ export class Main extends React.Component {
   };
 
   componentDidMount() {
-    fetch("https://www.omdbapi.com/?apikey=34e3dba2&s=matrix")
+    fetch("https://www.omdbapi.com/?apikey=34e3dba2&s=2022")
       .then((response) => response.json())
       .then((data) => this.setState({ movies: data.Search, loading: false }))
       .catch((error) => {
@@ -41,7 +41,8 @@ export class Main extends React.Component {
     return (
       <main className="container content">
         <Search searchMovies={this.searchMovies} />
-        {loading ? <Preloader /> : <Movies movies={movies} />}
+        {loading ? <Preloader /> : null}
+        {loading ? null : <Movies movies={movies} />}
       </main>
     );
   }
