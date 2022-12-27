@@ -1,15 +1,13 @@
-import { Header } from "./layout/Header";
-import { Main } from "./layout/Main";
-import { Footer } from "./layout/Footer";
-import { Movies } from "./components/Movies";
+import { Routes, Route } from "react-router-dom";
+
+import { Layout } from "./pages/Layout/Layout";
 
 export const App = () => {
   return (
     <>
-      <Header />
-      <Main />
-      <Movies />
-      <Footer />
+      <Routes>
+        <Route path="/" element={<Layout />} />
+      </Routes>
     </>
   );
 };

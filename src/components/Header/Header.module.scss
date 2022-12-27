@@ -1,0 +1,18 @@
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+
+  padding: 24px;
+}
+
+.nav__logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav__list {
+  font-size: 50px;
+}
