@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { getPopularMovies, searchMovies } from "../../utils/API";
+import { getPopularMovies, searchMovies } from "../../utils/API.js";
 
-import { MoviesList } from "../../components/MoviesList/MoviesList";
+import { MoviesList } from "../../components/MoviesList/MoviesList.tsx";
 import { Preloader } from "../../components/Preloader/Preloader";
 import { PaginationPages } from "../../components/PaginationPages/PaginationPages";
 import { Search } from "../../components/Search/Search";

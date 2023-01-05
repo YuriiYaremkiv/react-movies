@@ -34,7 +34,11 @@ export function Navigation({ title, list = [] }) {
         }}
       >
         {list.map((item) => {
-          return <MenuItem onClick={handleClose}>{item}</MenuItem>;
+          return (
+            <MenuItem key={item} onClick={handleClose}>
+              {item}
+            </MenuItem>
+          );
         })}
       </Menu>
     </div>
