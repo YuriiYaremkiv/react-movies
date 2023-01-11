@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { useLocation, NavLink } from "react-router-dom";
 import css from "./Movie.module.scss";
 
 export const Movie = (props) => {
@@ -10,10 +10,17 @@ export const Movie = (props) => {
     release_date,
     media_type,
     vote_average,
+    handleSubmitId,
   } = props;
 
+  const location = useLocation();
+
   return (
-    <NavLink to={`/${id}`}>
+    <NavLink
+      to={`/${id}`}
+      state={{ from: location }}
+      onClick={() => handleSubmitId(id)}
+    >
       <div className={css.card} id={id}>
         <div className="card-image waves-effect waves-block waves-light">
           {backdrop_path === "N/A" ? (
