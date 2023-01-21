@@ -48,6 +48,7 @@ export const HomePage = () => {
   return (
     <>
       <Search searchMoviesFunc={searchMoviesFunc} />
+      <h1>У тренді</h1>
       {loading ? <Preloader /> : null}
       {!loading ? <MoviesList movies={movies} /> : null}
       {!loading && totalPages > 1 ? (

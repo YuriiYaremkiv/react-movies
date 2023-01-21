@@ -1,13 +1,19 @@
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 
-export function PaginationPages({ page = 1, pages = 0, paginationPage }) {
+export function PaginationPages({ page, pages = 1, paginationPage }) {
+  function handlePageChange(event, newPage) {
+    paginationPage(newPage);
+  }
+
   return (
     <Stack spacing={2}>
       <Pagination
-        defaultPage={Number(page)}
+        showFirstButton
+        showLastButton
         count={pages}
-        onChange={(e) => paginationPage(e.target.textContent)}
+        page={page}
+        onChange={handlePageChange}
       />
     </Stack>
   );
